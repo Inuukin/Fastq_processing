@@ -15,7 +15,7 @@ def Fastq_proc():
     DF_stat = pd.DataFrame()
     count = 1
 
-    for record in SeqIO.parse("test.fastq", "fastq"):
+    for record in SeqIO.parse("reads.fastq", "fastq"):
             x = record.letter_annotations["phred_quality"]
             df = pd.DataFrame (x, columns = [count])
             DF[count] = list(x)
@@ -25,13 +25,14 @@ def Fastq_proc():
     DF_stat['read_position'] = np.arange(len(DF)) 
     DF_stat['mean_Phred_qual'] = DF.mean(axis=1) 
     DF_stat['standard_deviation_Phred_qual'] = DF.std(axis =1)
-
+    
+    ## Graph
 
     Graph = DF_stat.plot(kind = "barh", y = "mean_Phred_qual", legend = False, title = "Average read quality",
-        xerr = "standard_deviation_Phred_qual")
+        xerr = "standard_deviation_Phred_qual", figsize=(10,20))
 
     Graph.set(ylabel="Base position", xlabel="Phred")
-    plt.savefig('Barplot_read_quality.pdf')  
+    plt.savefig('Barplot_read_quality.pdf', dpi=300)  
 
     ## save to tsv file
 
