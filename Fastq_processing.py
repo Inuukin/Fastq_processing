@@ -8,14 +8,19 @@ import pandas as pd
 import matplotlib as mappet ## :D
 import matplotlib.pyplot as plt
 import numpy as np
-import unittest
+
 
 def Fastq_proc():
+    
+    ## generate pandas dataframes
+    
     DF = pd.DataFrame()
     DF_stat = pd.DataFrame()
     count = 1
-
-    for record in SeqIO.parse("reads.fastq", "fastq"):
+    
+    ## read in fasta files 
+    
+    for record in SeqIO.parse("reads.fastq", "fastq"): 
             x = record.letter_annotations["phred_quality"]
             df = pd.DataFrame (x, columns = [count])
             DF[count] = list(x)
