@@ -18,7 +18,7 @@ def Fastq_proc():
     DF_stat = pd.DataFrame()
     count = 1
     
-    ## read in fasta files 
+    ## read in fasta file 
     
     for record in SeqIO.parse("reads.fastq", "fastq"): 
             x = record.letter_annotations["phred_quality"]
