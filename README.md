@@ -3,4 +3,4 @@
 This is my 3rd program in python I have even written :)
 
 This program requires Biopython.
-You need to change the name of the input and outpute files in the script.
+You need to change the name of the input and output files in the script.
