@@ -19,6 +19,7 @@ def Fastq_proc():
     count = 1
     
     ## read in fasta file 
+    ## change name of imported fasta file to a name of a file you want to analyse
     
     for record in SeqIO.parse("reads.fastq", "fastq"): 
             x = record.letter_annotations["phred_quality"]
