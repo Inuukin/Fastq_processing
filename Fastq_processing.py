@@ -20,7 +20,7 @@ def Fastq_proc():
     
     ## read the fasta file in
     
-    for record in SeqIO.parse("test.fastq", "fastq"):
+    for record in SeqIO.parse("reads.fastq", "fastq"):
             x = record.letter_annotations["phred_quality"]
             df = pd.DataFrame (x, columns = [count])
             DF[count] = list(x)
