@@ -31,7 +31,7 @@ def Fastq_proc():
     DF_stat['read_position'] = np.arange(1, len(DF) + 1) 
     DF_stat['mean_Phred_qual'] = DF.mean(axis=1) 
     DF_stat['standard_deviation_Phred_qual'] = DF.std(axis =1)
-    print(DF_stat)
+   
     
     ## Graph
 
